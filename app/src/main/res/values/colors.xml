@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="graph_background_up"></color>
+    <color name="graph_background_down"></color>
+    <color name="bet_button_background_up"></color>
+    <color name="bet_button_background_down"></color>
+
+
+</resources>
