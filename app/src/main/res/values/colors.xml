@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="graph_background_up"></color>
-    <color name="graph_background_down"></color>
-    <color name="bet_button_background_up"></color>
-    <color name="bet_button_background_down"></color>
 
+<resources>
+    <color name="text_color_dark">#111111</color>
+    <color name="text_color_light">#EEEEEE</color>
+    <color name="text_color_grey">#333333</color>
+
+    <!-- daily quiz -->
+    <color name="graph_line">#EEEEEE</color>
+    <color name="graph_background_up">#009900</color>
+    <color name="graph_background_down">#CC4444</color>
+
+    <color name="button_background_buy">#00BB00</color>
+    <color name="button_background_sell">#EE0000</color>
+
+    <color name="bonus_focus">#6091dd</color>
+
+    <color name="ignore_background">#666666</color>
 
 </resources>

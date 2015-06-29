@@ -5,4 +5,45 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- general font styles -->
+    <style name="TextAppearance">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault</item>
+    </style>
+    <style name="TextAppearance.ExtremeLarge">
+        <item name="android:textSize">@dimen/general_extreme_large_font_size</item>
+    </style>
+    <style name="TextAppearance.ExtraLarge">
+        <item name="android:textSize">@dimen/general_extra_large_font_size</item>
+    </style>
+
+    <style name="TextAppearance.Large">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Large</item>
+    </style>
+    <style name="TextAppearance.Large.Light">
+        <item name="android:textColor">@color/text_color_light</item>
+    </style>
+
+
+    <style name="TextAppearance.Medium">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Medium</item>
+    </style>
+    <style name="TextAppearance.Medium.Light">
+        <item name="android:textColor">@color/text_color_light</item>
+    </style>
+
+    <style name="TextAppearance.Small">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>
+    </style>
+    <style name="TextAppearance.Small.Light">
+        <item name="android:textColor">@color/text_color_light</item>
+    </style>
+
+    <style name="TextAppearance.ExtraSmall">
+        <item name="android:textSize">@dimen/general_extra_small_font_size</item>
+    </style>
+    <style name="TextAppearance.ExtraSmall.Light">
+        <item name="android:textColor">@color/text_color_light</item>
+    </style>
+
+
 </resources>

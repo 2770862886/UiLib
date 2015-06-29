@@ -8,34 +8,42 @@
         android:id="@+id/dailyQuiz_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/dailyQuiz_title"
+        style="@style/TextAppearance.ExtraLarge"/>
 
     <RelativeLayout
         android:id="@+id/dailyQuiz_graph_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp">
+        android:layout_marginBottom="2dp"
+        android:background="@color/graph_background_down">
 
         <TextView
             android:id="@+id/dailyQuiz_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"/>
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            style="@style/TextAppearance.Small.Light"/>
 
         <TextView
             android:id="@+id/dailyQuiz_currentPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            style="@style/TextAppearance.Medium.Light"/>
 
-        <View
+        <com.example.liangchao.uilib.widget.LineChart
             android:id="@+id/dailyQuiz_graph"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dailyQuiz_graph_height"
-            android:layout_alignParentBottom="true"/>
+            android:layout_below="@id/dailyQuiz_currentPrice"
+            android:background="@color/graph_background_down"/>
 
     </RelativeLayout>
 
@@ -44,47 +52,46 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/dailyQuiz_bet_ups"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/dailyQuiz_buy_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/dailyQuiz_buy_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/dailyQuiz_buy_percent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:minHeight="@dimen/dailyQuiz_button_min_height"
+            android:layout_marginLeft="@dimen/general_dialog_margin_left_right"
+            android:layout_marginRight="@dimen/general_dialog_margin_left_right"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/button_background_buy"
+            android:text="@string/dailyQuiz_buy"
+            style="@style/TextAppearance.Medium.Light"/>
 
-        <LinearLayout
-            android:id="@+id/dailyQuiz_bet_downs"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/dailyQuiz_sell_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/dailyQuiz_sell_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/dailyQuiz_sell_percent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:minHeight="@dimen/dailyQuiz_button_min_height"
+            android:layout_marginRight="@dimen/general_dialog_margin_left_right"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/button_background_sell"
+            android:text="@string/dailyQuiz_sell"
+            style="@style/TextAppearance.Medium.Light"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_dialog_margin_top_bottom"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dailyQuiz_today_bonus"/>
+            android:layout_marginLeft="@dimen/general_dialog_margin_left_right"
+            android:text="@string/dailyQuiz_today_bonus"
+            android:textStyle="bold"
+            style="@style/TextAppearance.Small"/>
 
         <TextView
             android:id="@+id/dailyQuiz_bonus"
@@ -97,11 +104,24 @@
     <TextView
         android:id="@+id/dailyQuiz_instruction"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general_dialog_margin_left_right"
+        android:layout_marginRight="@dimen/general_dialog_margin_left_right"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/dailyQuiz_instruction"/>
 
     <TextView
         android:id="@+id/dailyQuiz_ignore"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dailyQuiz_button_min_height"
+        android:layout_margin="18dp"
+        android:gravity="center"
+        android:text="@string/dailyQuiz_ignore"
+        android:textStyle="bold"
+        android:background="@color/ignore_background"
+        style="@style/TextAppearance.Medium.Light"/>
 
 </LinearLayout>

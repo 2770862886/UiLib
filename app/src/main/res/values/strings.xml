@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">UiLib</string>
 
-    <string name="dailyQuiz_today_bonus">Today's Bonus</string>
+    <string name="dailyQuiz_title">Daily Quiz</string>
+    <string name="dailyQuiz_today_bonus">Today\'s Bonus</string>
+    <string name="dailyQuiz_buy">BUY (%1$s)</string>
+    <string name="dailyQuiz_sell">SELL(%1$s)</string>
+    <string name="dailyQuiz_instruction">Double the bonus once you\'re right, else stays the same. </string>
+    <string name="dailyQuiz_ignore">IGNORE FOR NOW</string>
 
 </resources>

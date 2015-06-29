@@ -2,10 +2,7 @@ package com.example.liangchao.uilib;
 
 import android.os.Bundle;
 
-/**
- * Created by liangchao on 6/25/15.
- */
-public abstract  class Presenter<U extends Ui> {
+public abstract class Presenter<U extends Ui> {
     private U mUi;
 
     public void onUiReady(U ui) {
@@ -28,5 +25,9 @@ public abstract  class Presenter<U extends Ui> {
 
     public U getUi() {
         return mUi;
+    }
+
+    public interface OnClickListener {
+        void onClick(int id);
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dailyQuiz_title">每日竞猜</string>
+    <string name="dailyQuiz_today_bonus">今日奖金</string>
+    <string name="dailyQuiz_buy">猜涨 (%1$s)</string>
+    <string name="dailyQuiz_sell">猜跌 (%1$s)</string>
+    <string name="dailyQuiz_instruction">猜对次日奖金翻倍，猜错不变。不猜变回5$。当日收盘价与前日收盘价比较涨跌</string>
+    <string name="dailyQuiz_ignore">暂时不猜</string>
+
+</resources>

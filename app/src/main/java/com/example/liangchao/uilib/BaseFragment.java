@@ -3,9 +3,6 @@ package com.example.liangchao.uilib;
 import android.app.DialogFragment;
 import android.os.Bundle;
 
-/**
- * Created by liangchao on 6/25/15.
- */
 public abstract class BaseFragment<T extends Presenter<U>, U extends Ui> extends DialogFragment {
 
     private T mPresenter;
@@ -34,6 +31,8 @@ public abstract class BaseFragment<T extends Presenter<U>, U extends Ui> extends
         if (savedInstanceState != null) {
             mPresenter.onRestoreInstanceState(savedInstanceState);
         }
+
+        setStyle(DialogFragment.STYLE_NORMAL, 0);
     }
 
     @Override

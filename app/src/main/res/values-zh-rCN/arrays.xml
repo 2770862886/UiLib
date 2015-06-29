@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dailyQuiz_subtitles">
+        <item>周一猜 黄金</item>
+        <item>周二猜 白银</item>
+        <item>周三猜 黄铜</item>
+        <item>周四猜 钢铁</item>
+        <item>周五猜 石油</item>
+    </string-array>
+
+
+</resources>
