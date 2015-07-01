@@ -31,8 +31,6 @@ public abstract class BaseFragment<T extends Presenter<U>, U extends Ui> extends
         if (savedInstanceState != null) {
             mPresenter.onRestoreInstanceState(savedInstanceState);
         }
-
-        setStyle(DialogFragment.STYLE_NORMAL, 0);
     }
 
     @Override

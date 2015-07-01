@@ -19,15 +19,18 @@ public class LineChart extends View implements View.OnLayoutChangeListener {
     private static final int MARGIN_TOP         = 8;
     private static final int MARGIN_BOTTOM      = 8;
 
+    private static final int MIN_POINT_X        = 15;
+
     // TODO
     private Paint mBaseline, mReferenceLine, mCursor;
 
     private int mLeft, mRight, mTop, mBottom, mWidth, mHeight;
-    private float mBaseY;
+    private float mBaseY, mScaleX, mScaleY;
 
     private int mBackgroundColor;
 
-    private float[] mData;
+    private float mLastClosingPrice;
+    private float[] mPrices;
 
     public LineChart(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -49,24 +52,46 @@ public class LineChart extends View implements View.OnLayoutChangeListener {
 
         Log.d(TAG, "onLayoutChange() : left=" + left + "; top=" + top + "; right=" + right + "; bottom=" + bottom);
 
-        mWidth = right - left;
-        mHeight = bottom - top;
+        mWidth = right - left - MARGIN_LEFT - MARGIN_RIGHT;
+        mHeight = bottom - top - MARGIN_TOP - MARGIN_BOTTOM;
 
         mLeft = MARGIN_LEFT;
-        mRight = mWidth - MARGIN_RIGHT;
+        mRight = mLeft + mWidth;
         mTop = MARGIN_TOP;
-        mBottom = mHeight - MARGIN_BOTTOM;
+        mBottom = mTop + mHeight;
 
-        mBaseY = (mBottom + mTop) / 2;
+        mBaseY = (mTop + mBottom) / 2;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        computeScale();
         drawBaseline(canvas);
+        drawData(canvas);
+        drawCursor(canvas);
 
         dump();
+    }
+
+    private boolean ensureData() {
+        return mPrices != null && mPrices.length > 0;
+    }
+
+    private void computeScale() {
+        if (!ensureData())
+            return;
+
+        float max = 0, min = Float.MAX_VALUE;
+        for (int i = 0; i < mPrices.length; i++) {
+            if (max < mPrices[i])
+                max = mPrices[i];
+            if (min > mPrices[i])
+                min = mPrices[i];
+        }
+
+
     }
 
     private void drawBaseline(Canvas canvas) {
@@ -74,17 +99,35 @@ public class LineChart extends View implements View.OnLayoutChangeListener {
     }
 
     private void drawData(Canvas canvas) {
+        if (!ensureData())
+            return;
+
 
     }
 
-    private void drawCursor() {
+    private void drawCursor(Canvas canvas) {
 
     }
-
 
     void dump() {
         Log.v(TAG, "Left=" + mLeft + "; Right=" + mRight + "; Top=" + mTop + "; Bottom=" + mBottom);
         Log.v(TAG, "Width=" + mWidth + "; Height=" + mHeight);
         Log.v(TAG, "BaseY=" + mBaseY);
+    }
+
+    /******************************************************************************
+     * Public operation
+     ******************************************************************************/
+
+    public void setLastClosingPrice(float price) {
+        if (price < 0) {
+            mLastClosingPrice = 0;
+        } else {
+            mLastClosingPrice = price;
+        }
+    }
+
+    public void setPriceArray(float[] array) {
+        mPrices = array;
     }
 }

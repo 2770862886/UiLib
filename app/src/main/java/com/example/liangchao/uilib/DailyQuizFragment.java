@@ -70,6 +70,8 @@ public class DailyQuizFragment extends BaseFragment<DailyQuizPresenter, DailyQui
         mSellerRate.setOnClickListener(this);
         mIgnore.setOnClickListener(this);
 
+        getDialog().setCanceledOnTouchOutside(false);
+
         return root;
     }
 
