@@ -1,7 +1,7 @@
 package com.example.liangchao.uilib;
 
-/**
- * Created by liangchao on 6/25/15.
- */
+import android.content.Context;
+
 public interface Ui {
+    Context getContext();
 }

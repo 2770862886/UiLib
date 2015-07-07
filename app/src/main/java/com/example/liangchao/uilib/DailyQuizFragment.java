@@ -113,6 +113,11 @@ public class DailyQuizFragment extends BaseFragment<DailyQuizPresenter, DailyQui
      ******************************************************************************/
 
     @Override
+    public Context getContext() {
+        return mContext;
+    }
+
+    @Override
     public void setTitle(String title) {
         if (mTitle != null) {
             mTitle.setText(title);
@@ -141,8 +146,17 @@ public class DailyQuizFragment extends BaseFragment<DailyQuizPresenter, DailyQui
     }
 
     @Override
-    public void setPriceArray(float[] array) {
+    public void setLastClosePrice(float value) {
+        if (mChart != null) {
+            mChart.setLastClosingPrice(value);
+        }
+    }
 
+    @Override
+    public void setPriceArray(float[] array) {
+        if (mChart != null) {
+            mChart.setPriceArray(array);
+        }
     }
 
     @Override
@@ -170,7 +184,6 @@ public class DailyQuizFragment extends BaseFragment<DailyQuizPresenter, DailyQui
             mSellerRate.setText(span);
         }
     }
-
 
     @Override
     public void setBonus(int index) {
@@ -202,6 +215,18 @@ public class DailyQuizFragment extends BaseFragment<DailyQuizPresenter, DailyQui
     public void setGraphBackgroundColor(int color) {
         if (mGraphContainer != null) {
             mGraphContainer.setBackgroundColor(color);
+        }
+
+        if (mChart != null) {
+            mChart.setBackgroundColor(color);
+        }
+
+        if (mSubtitle != null) {
+            mSubtitle.setBackgroundColor(color);
+        }
+
+        if (mCurrentPrice != null) {
+            mCurrentPrice.setBackgroundColor(color);
         }
     }
 

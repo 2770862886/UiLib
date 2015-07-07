@@ -42,8 +42,7 @@
             android:id="@+id/dailyQuiz_graph"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dailyQuiz_graph_height"
-            android:layout_below="@id/dailyQuiz_currentPrice"
-            android:background="@color/graph_background_down"/>
+            android:layout_below="@id/dailyQuiz_currentPrice"/>
 
     </RelativeLayout>
 
